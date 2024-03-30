@@ -26,7 +26,7 @@ import {computed} from 'vue'
             <div class="row justify-content-center justify-content-md-between">
                 <div class="col-8 col-md-3">
                     <a href="index.html">
-                        <img class="img-fluid" src="/img/logo.svg" alt="imagen logo">
+                        <img class="img-fluid" src="/img/logoCar.png" alt="imagen logo">
                     </a>
                 </div>
                 
@@ -56,7 +56,7 @@ import {computed} from 'vue'
                                         v-for="producto in carrito"
                                         >
                                             <td>
-                                                <img class="img-fluid" :src="'/img/'+producto.imagen + '.jpg'" alt="imagen guitarra">
+                                                <img class="img-fluid" :src="'/img/'+producto.imagen + '.png'" alt="imagen guitarra">
                                             </td>
                                             <td>{{ producto.nombre }}</td>
                                             <td class="fw-bold">
@@ -104,7 +104,7 @@ import {computed} from 'vue'
 
             <div class="row mt-5">
                 <div class="col-md-6 text-center text-md-start pt-5">
-                    <h1 class="display-2 fw-bold">Modelo {{ guitarra.nombre }}</h1>
+                    <h1 class="display-2 fw-bold">{{ guitarra.nombre }}</h1>
                     <p class="mt-5 fs-5 text-white">{{ guitarra.descripcion }}.</p>
                     <p class="text-primary fs-1 fw-black">${{ guitarra.precio }}</p>
                     <button 
@@ -117,7 +117,7 @@ import {computed} from 'vue'
             </div>
         </div>
 
-        <img class="header-guitarra" src="/img/header_guitarra.png" alt="imagen header">
+        <img class="header-guitarra" src="/img/bmw_e36bgheader.png" alt="imagen header">
     </header>
 </template>
 

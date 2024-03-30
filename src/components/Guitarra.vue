@@ -14,7 +14,7 @@
                 <div class="col-4">
                     <!-- con el v-bind:src buscamos la imagen como atributo dinamico, es decir que permite agregar codigo JS-->
                     <img class="img-fluid" 
-                    :src="'/img/'+guitarra.imagen + '.jpg'" 
+                    :src="'/img/'+guitarra.imagen + '.png'" 
                     :alt="'imagen guitarra' + guitarra.nombre">
                 </div>
                 <div class="col-8">
