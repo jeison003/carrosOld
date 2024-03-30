@@ -1,7 +1,7 @@
 <script setup>
     import { ref, reactive, onMounted, watch } from 'vue'
-    import { db } from './data/guitarras'
-    import Guitarra from './components/Guitarra.vue'
+    import { db } from './data/carros'
+    import Carro from './components/Carro.vue'
     import Header from './components/Header.vue'
     import Footer from './components/Footer.vue'
     
@@ -15,7 +15,7 @@
     // console.log(state.guitarras)
 
     //USANDO REF (recomendando cuando es algo diferente a un arreglo )
-    const guitarras = ref([]);
+    const carros = ref([]);
     const carrito = ref([]);
     const guitarra = ref({});
 
@@ -28,7 +28,7 @@
     });
     //ciclo de vida de un componente (como el onInit en angular), apenas carga el componente hace la asignacion
     onMounted(() => {
-        guitarras.value = db;
+        carros.value = db;
         //en el caso del state con reactive
         // state.guitarras = db
         guitarra.value = db[3];
@@ -91,14 +91,14 @@
 />
 
     <main class="container-xl mt-5">
-        <h2 class="text-center">Nuestra Colección</h2>
+        <h2 class="text-center">Carros míticos</h2>
 
         <div class="row mt-5">
                 <!-- Componentente guitarra -->
                 <!-- Props es la forma en que se comunican entre componentes, en este caso el v-bind -->
                 <!-- v-bind:guitarra="guitarraItem" esto es exactamente igual a :guitarra="guitarraItem" -->
-                <Guitarra 
-                v-for="guitarraItem in guitarras"
+                <Carro 
+                v-for="guitarraItem in carros"
                 :guitarra="guitarraItem"
                 @agregar-carrito="agregarCarrito"
                 />

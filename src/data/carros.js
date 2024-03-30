@@ -81,6 +81,6 @@ export const db = [
         nombre: 'Subaru Legacy Gt 2.5 1997',
         imagen: 'subaru_legacy_gt_2.5_1997',
         descripcion: 'El Subaru Legacy es un automóvil de turismo del segmento D de la marca japonesa Subaru. Es un cinco plazas con motor delantero longitudinal, bóxer de 1.8, 2.0, 2.2, 2.5 0 3.0 litros.',
-        precio: 379,
+        precio: 18000000,
     },
 ]
