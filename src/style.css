@@ -225,6 +225,18 @@ svg {
   .carImg{
     height: 100px !important;
   }
+  .carImgCarrito{
+    height: 50px !important;
+    width: 70px !important;
+  }
+}
+
+@media(min-width: 425px){
+  .carImgCarrito{
+    height: 60px !important;
+    width: 85px !important;
+  }
+ 
 }
 table {
   caption-side: bottom;
@@ -359,9 +371,7 @@ button:not(:disabled),
     max-width: 1320px;
   }
 }
-.flex{
-  display: flex;
-}
+
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -613,6 +623,11 @@ button:not(:disabled),
 
 .w-100 {
   width: 100% !important;
+}
+@media(max-width:500px){
+  .navCar {
+    width: 240px !important;
+  }
 }
 
 .justify-content-end {

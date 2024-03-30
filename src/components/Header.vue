@@ -38,7 +38,7 @@ import {computed} from 'vue'
                                 El carrito esta vacio
                             </p>
 
-                            <div v-else> 
+                            <div class="navCar" v-else> 
                                 <table  class="w-100 table">
                                     <thead>
                                         <tr>
@@ -53,12 +53,14 @@ import {computed} from 'vue'
                                         <tr
                                         v-for="producto in carrito"
                                         >
-                                            <td>
-                                                <img class="img-fluid" :src="'/img/'+producto.imagen + '.png'" alt="imagen carro">
+                                            <td >
+                                                <img class="carImgCarrito" :src="producto.imagen" alt="imagen carro">
                                             </td>
-                                            <td>{{ producto.nombre }}</td>
+                                            <td >
+                                                <p>{{ producto.nombre }}</p>
+                                            </td>
                                             <td class="fw-bold">
-                                                ${{ producto.precio }}
+                                                <p>${{ producto.precio }}</p>
                                             </td>
                                             <td class="flex align-items-start gap-4">
                                                 <button 
