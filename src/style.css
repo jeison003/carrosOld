@@ -178,17 +178,7 @@ h2, .h2 {
     font-size: 3.6rem;
   }
 }
-/* 
-@media(min-width:319px){
-  .carritoResponsive{
-    width: 310px !important;
-  }
-}
-@media((max-width:435px)){
-  .carritoResponsive{
-    width: 310px !important;
-  }
-} */
+
 
 h3, .h3 {
   font-size: calc(1.385rem + 1.62vw);
@@ -198,6 +188,12 @@ h3, .h3 {
     font-size: 2.6rem;
   }
 }
+@media (max-width: 500px) {
+  p {
+    font-size: 0.8rem;
+  }
+}
+
 
 p {
   margin-top: 0;
@@ -222,6 +218,14 @@ svg {
   vertical-align: middle;
 }
 
+.carImg{
+  height: 145px !important;
+}
+@media(max-width: 424px){
+  .carImg{
+    height: 100px !important;
+  }
+}
 table {
   caption-side: bottom;
   border-collapse: collapse;
@@ -713,6 +717,12 @@ button:not(:disabled),
 .text-primary {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+}
+
+@media (min-width:760px) {
+  p .text-primary{
+    font-size: 1.2rem !important;
+  }
 }
 
 .text-black {
