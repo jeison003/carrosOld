@@ -1,5 +1,6 @@
 <script setup>
 import {computed} from 'vue'
+import {formatearCantidad} from '../helpers'
     const props = defineProps({
         carrito: {
             type: Array,
@@ -60,7 +61,7 @@ import {computed} from 'vue'
                                                 <p>{{ producto.nombre }}</p>
                                             </td>
                                             <td class="fw-bold">
-                                                <p>${{ producto.precio }}</p>
+                                                <p>{{ formatearCantidad(carro.precio) }}</p>
                                             </td>
                                             <td class="flex align-items-start gap-4">
                                                 <button 
@@ -90,7 +91,7 @@ import {computed} from 'vue'
                                     </tbody>
                                 </table>
 
-                                <p class="text-end">Total pagar: <span class="fw-bold">${{ totalPagar }}</span></p>
+                                <p class="text-end">Total pagar: <span class="fw-bold">{{ formatearCantidad(totalPagar) }}</span></p>
                                 <button 
                                 class="btn btn-dark w-100 mt-3 p-2"
                                 @click="$emit('vaciar-carrito')"
@@ -106,7 +107,7 @@ import {computed} from 'vue'
                 <div class="col-md-6 text-center text-md-start pt-5">
                     <h1 class="display-2 fw-bold">{{ carro.nombre }}</h1>
                     <p class="mt-5 fs-5 text-white">{{ carro.descripcion }}.</p>
-                    <p class="text-primary fs-1 fw-black">${{ carro.precio }}</p>
+                    <p class="text-primary fs-1 fw-black">${{ formatearCantidad(carro.precio) }}</p>
                     <button 
                     type="button" 
                     class="btn fs-4 bg-primary text-white py-2 px-5"

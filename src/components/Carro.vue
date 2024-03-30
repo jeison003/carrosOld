@@ -1,5 +1,5 @@
 <script setup>
-
+import {formatearCantidad} from '../helpers'
         const props = defineProps({
             carro:{
                 type: Object,
@@ -19,7 +19,7 @@
                 <div class="col-8">
                     <h3 class="text-black fs-5 fw-bold text-uppercase">{{ carro.nombre }}</h3>
                     <p>{{ carro.descripcion }}</p>
-                    <p class="fw-black text-primary fs-4">${{ carro.precio}}</p>
+                    <p class="fw-black text-primary fs-4">{{formatearCantidad(carro.precio)}}</p>
                     <button
                      type="button"
                       class="btn btn-dark w-100 "
