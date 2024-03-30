@@ -17,7 +17,7 @@
     //USANDO REF (recomendando cuando es algo diferente a un arreglo )
     const carros = ref([]);
     const carrito = ref([]);
-    const guitarra = ref({});
+    const carro = ref({});
 
     //Es el encargado de ver si cambio algo en el state que le pases (en este caso el carrito)
     watch(carrito, ()=>{
@@ -31,7 +31,7 @@
         carros.value = db;
         //en el caso del state con reactive
         // state.guitarras = db
-        guitarra.value = db[3];
+        carro.value = db[3];
         const carritoStorage = localStorage.getItem('carrito');
         if(carritoStorage){
             carrito.value = JSON.parse(carritoStorage);
@@ -41,15 +41,15 @@
     const guardarLocalStorage = () =>{
         localStorage.setItem('carrito',JSON.stringify(carrito.value))
     }
-    const agregarCarrito =  (guitarra)=>{
+    const agregarCarrito =  (carro)=>{
         // Si no lo encontro retorna -1, si lo encontro retorna la posicion en la que esta
-        const existeCarrito = carrito.value.findIndex( producto => producto.id === guitarra.id)
+        const existeCarrito = carrito.value.findIndex( producto => producto.id === carro.id)
         if(existeCarrito >=0){
             //si existe carrito inyectamos la posicion en la que esta y su mamamos la cantidad
             carrito.value[existeCarrito].cantidad++
         }else{
-            guitarra.cantidad = 1;
-            carrito.value.push(guitarra);
+            carro.cantidad = 1;
+            carrito.value.push(carro);
         }
         
     }
@@ -82,7 +82,7 @@
 <!-- Componente Header -->
 <Header
     :carrito="carrito"
-    :guitarra="guitarra"
+    :carro="carro"
     @decrementar-cantidad = "decrementarCantidad"
     @incrementar-cantidad = "incrementarCantidad"
     @agregar-carrito="agregarCarrito"
@@ -98,8 +98,8 @@
                 <!-- Props es la forma en que se comunican entre componentes, en este caso el v-bind -->
                 <!-- v-bind:guitarra="guitarraItem" esto es exactamente igual a :guitarra="guitarraItem" -->
                 <Carro 
-                v-for="guitarraItem in carros"
-                :guitarra="guitarraItem"
+                v-for="carroItem in carros"
+                :carro="carroItem"
                 @agregar-carrito="agregarCarrito"
                 />
         </div>

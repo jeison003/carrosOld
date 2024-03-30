@@ -1,7 +1,7 @@
 <script setup>
 
         const props = defineProps({
-            guitarra:{
+            carro:{
                 type: Object,
                 required: true
             }
@@ -14,18 +14,18 @@
                 <div class="col-4">
                     <!-- con el v-bind:src buscamos la imagen como atributo dinamico, es decir que permite agregar codigo JS-->
                     <img class="img-fluid" 
-                    :src="'/img/'+guitarra.imagen + '.png'" 
-                    :alt="'imagen guitarra' + guitarra.nombre">
+                    :src="'/img/'+carro.imagen + '.png'" 
+                    :alt="'imagen carro' + carro.nombre">
                 </div>
                 <div class="col-8">
-                    <h3 class="text-black fs-4 fw-bold text-uppercase">{{ guitarra.nombre }}</h3>
-                    <p>{{ guitarra.descripcion }}</p>
-                    <p class="fw-black text-primary fs-3">${{ guitarra.precio}}</p>
+                    <h3 class="text-black fs-4 fw-bold text-uppercase">{{ carro.nombre }}</h3>
+                    <p>{{ carro.descripcion }}</p>
+                    <p class="fw-black text-primary fs-3">${{ carro.precio}}</p>
                     <!-- v-on:click="" es igual al @click-->
                     <button
                      type="button"
                       class="btn btn-dark w-100 "
-                      @click="$emit('agregar-carrito', guitarra) "
+                      @click="$emit('agregar-carrito', carro) "
                      >Agregar al Carrito</button>
                 </div>
             </div>

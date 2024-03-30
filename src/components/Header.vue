@@ -6,7 +6,7 @@ import {computed} from 'vue'
             type: Array,
             required: true
         },
-        guitarra:{
+        carro:{
             type: Object,
             required: true
         }
@@ -56,7 +56,7 @@ import {computed} from 'vue'
                                         v-for="producto in carrito"
                                         >
                                             <td>
-                                                <img class="img-fluid" :src="'/img/'+producto.imagen + '.png'" alt="imagen guitarra">
+                                                <img class="img-fluid" :src="'/img/'+producto.imagen + '.png'" alt="imagen carro">
                                             </td>
                                             <td>{{ producto.nombre }}</td>
                                             <td class="fw-bold">
@@ -104,13 +104,13 @@ import {computed} from 'vue'
 
             <div class="row mt-5">
                 <div class="col-md-6 text-center text-md-start pt-5">
-                    <h1 class="display-2 fw-bold">{{ guitarra.nombre }}</h1>
-                    <p class="mt-5 fs-5 text-white">{{ guitarra.descripcion }}.</p>
-                    <p class="text-primary fs-1 fw-black">${{ guitarra.precio }}</p>
+                    <h1 class="display-2 fw-bold">{{ carro.nombre }}</h1>
+                    <p class="mt-5 fs-5 text-white">{{ carro.descripcion }}.</p>
+                    <p class="text-primary fs-1 fw-black">${{ carro.precio }}</p>
                     <button 
                     type="button" 
                     class="btn fs-4 bg-primary text-white py-2 px-5"
-                    @click="$emit('agregar-carrito', guitarra)"
+                    @click="$emit('agregar-carrito', carro)"
                     >
                     Agregar al Carrito</button>
                 </div>
