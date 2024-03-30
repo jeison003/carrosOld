@@ -1,7 +1,12 @@
 <template>
     <footer class="bg-dark mt-5 py-5">
         <div class="container-xl">
-            <p class="text-white text-center fs-4 mt-4 m-md-0">ClassiCar - Todos los derechos Reservados</p>
+            <div class="flex justify-content-center align-items-center">          
+                <a href="index.html">
+                    <img class="logoCar" src="https://github.com/jeison003/carrosOld/blob/main/public/img/logoCar.png?raw=true" alt="imagen logo">
+                </a>
+            </div>
+           
         </div>
     </footer>
 </template>

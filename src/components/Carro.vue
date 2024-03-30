@@ -13,7 +13,7 @@
     <div  class="col-md-6 col-lg-4 my-4 row align-items-center"  >
                 <div class="col-4">
                     <img class="img-fluid" 
-                    :src="'/img/'+carro.imagen + '.png'" 
+                    :src="carro.imagen" 
                     :alt="'imagen carro' + carro.nombre">
                 </div>
                 <div class="col-8">
