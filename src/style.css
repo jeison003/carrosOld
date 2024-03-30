@@ -48,6 +48,7 @@
   padding: 0 2px;
   margin: 0 3px;
 }
+
 .m-0 {
   margin: 0;
 }
@@ -177,6 +178,17 @@ h2, .h2 {
     font-size: 3.6rem;
   }
 }
+/* 
+@media(min-width:319px){
+  .carritoResponsive{
+    width: 310px !important;
+  }
+}
+@media((max-width:435px)){
+  .carritoResponsive{
+    width: 310px !important;
+  }
+} */
 
 h3, .h3 {
   font-size: calc(1.385rem + 1.62vw);

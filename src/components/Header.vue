@@ -1,6 +1,5 @@
 <script setup>
 import {computed} from 'vue'
-//? el setup es para avisar que estas usando composition APIlifecycle hooks
     const props = defineProps({
         carrito: {
             type: Array,
@@ -34,8 +33,7 @@ import {computed} from 'vue'
                     <div class="carrito">
                         <img class="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
 
-                        <div id="carrito" class="bg-white p-3">
-                            <!-- Condicional para mostrar ese mensaje -->
+                        <div id="carrito" class="bg-white p-3 ">
                             <p v-if="carrito.length === 0" class="text-center m-0">
                                 El carrito esta vacio
                             </p>

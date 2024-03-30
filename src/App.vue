@@ -5,28 +5,17 @@
     import Header from './components/Header.vue'
     import Footer from './components/Footer.vue'
     
-    //USANDO REACTIVE (si son datos agrupado usas reactive "arreglos")
-    //(recomendado cuando es de un objeto relacionado, es decir como el state es un objeto, que cada propiedad
-    //sea un objeto que tenga relacion con otro objeto)
-
-    // const state = reactive({
-    //     guitarras: db
-    // });
-    // console.log(state.guitarras)
-
-    //USANDO REF (recomendando cuando es algo diferente a un arreglo )
     const carros = ref([]);
     const carrito = ref([]);
     const carro = ref({});
 
-    //Es el encargado de ver si cambio algo en el state que le pases (en este caso el carrito)
     watch(carrito, ()=>{
         guardarLocalStorage();
     },
     {
         deep:true
     });
-    //ciclo de vida de un componente (como el onInit en angular), apenas carga el componente hace la asignacion
+
     onMounted(() => {
         carros.value = db;
         //en el caso del state con reactive
@@ -42,10 +31,10 @@
         localStorage.setItem('carrito',JSON.stringify(carrito.value))
     }
     const agregarCarrito =  (carro)=>{
-        // Si no lo encontro retorna -1, si lo encontro retorna la posicion en la que esta
+
         const existeCarrito = carrito.value.findIndex( producto => producto.id === carro.id)
         if(existeCarrito >=0){
-            //si existe carrito inyectamos la posicion en la que esta y su mamamos la cantidad
+
             carrito.value[existeCarrito].cantidad++
         }else{
             carro.cantidad = 1;
@@ -72,7 +61,7 @@
         
     }
     const vaciarCarrito = ()=>{
-        // carrito.value = carritoLleno.splice(0,carritoLleno.lenght);
+
         carrito.value = [];
        
     }
@@ -93,11 +82,10 @@
     <main class="container-xl mt-5">
         <h2 class="text-center">Carros míticos</h2>
 
-        <div class="row mt-5">
-                <!-- Componentente guitarra -->
-                <!-- Props es la forma en que se comunican entre componentes, en este caso el v-bind -->
-                <!-- v-bind:guitarra="guitarraItem" esto es exactamente igual a :guitarra="guitarraItem" -->
+        <div class="row mt-5" style="background-color: gray;">
+                <!-- Componentente carro -->
                 <Carro 
+                
                 v-for="carroItem in carros"
                 :carro="carroItem"
                 @agregar-carrito="agregarCarrito"
