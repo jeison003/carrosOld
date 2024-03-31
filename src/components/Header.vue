@@ -34,7 +34,7 @@ import {formatearCantidad} from '../helpers'
                     <div class="carrito">
                         <img class="img-fluid" src="https://github.com/jeison003/carrosOld/blob/main/public/img/carrito.png?raw=true" alt="imagen carrito" />
 
-                        <div id="carrito" class="bg-white p-3 ">
+                        <div id="carrito" class="bg-white p-1 ">
                             <p v-if="carrito.length === 0" class="text-center m-0">
                                 El carrito esta vacio
                             </p>
@@ -42,7 +42,7 @@ import {formatearCantidad} from '../helpers'
                             <div class="navCar" v-else> 
                                 <table  class="w-100 table">
                                     <thead>
-                                        <tr>
+                                        <tr class="trResponsive">
                                             <th>Imagen</th>
                                             <th>Nombre</th>
                                             <th>Precio</th>
@@ -53,6 +53,7 @@ import {formatearCantidad} from '../helpers'
                                     <tbody>
                                         <tr
                                         v-for="producto in carrito"
+                                        class="trResponsive"
                                         >
                                             <td >
                                                 <img class="carImgCarrito" :src="producto.imagen" alt="imagen carro">
@@ -60,13 +61,15 @@ import {formatearCantidad} from '../helpers'
                                             <td >
                                                 <p>{{ producto.nombre }}</p>
                                             </td>
-                                            <td class="fw-bold">
-                                                <p>{{ formatearCantidad(carro.precio) }}</p>
+                                            <td class="fw-bold ">
+                                                <p>{{ formatearCantidad(producto.precio) }}</p>
                                             </td>
-                                            <td class="flex align-items-start gap-4">
+                                            <td class="flex gap-4">
                                                 <button 
+                                                
                                                 @click="$emit('decrementar-cantidad', producto.id)"
-                                                type="button" class="btn btn-dark">
+                                                type="button"
+                                                class="btn btn-dark buttonResponsive">
                                                     -
                                                 </button>
 
@@ -74,13 +77,14 @@ import {formatearCantidad} from '../helpers'
 
                                                 <button  
                                                 @click="$emit('incrementar-cantidad', producto.id)"
-                                                type="button" class="btn btn-dark">
+                                                type="button" 
+                                                class="btn btn-dark buttonResponsive">
                                                     +
                                                 </button>
                                             </td>
                                             <td>
                                                 <button 
-                                                class="btn btn-danger" 
+                                                class="btn btn-danger deleteButton" 
                                                 type="button"
                                                 @click="$emit('eliminar-producto',producto.id)"
                                                 >
